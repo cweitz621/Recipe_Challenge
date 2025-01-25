@@ -1,3 +1,7 @@
+//getting HTML elements
+const button = document.getElementById('button')
+const ingredientsList = document.getElementById('random-ingredients')
+
 // creating database of recipe components
 
 const protein = ['chicken', 'steak', 'pork', 'fish']
@@ -11,7 +15,8 @@ const generateIngredients = () => {
     let randCarb = carb[Math.floor(Math.random() * carb.length)]
     let randVeggie = veggie[Math.floor(Math.random() * veggie.length)]
     let randSauce = sauce[Math.floor(Math.random() * sauce.length)]
-    return `Your ingredients are: ${randProtein}, ${randCarb}, ${randVeggie}, ${randSauce}. Good Luck.`
+    ingredientsList.innerHTML = `Your ingredients are: ${randProtein}, ${randCarb}, ${randVeggie}, ${randSauce}. Good Luck.`
 }
 
-console.log(generateIngredients())
+//Appends random ingredients when button is clicked
+button.addEventListener("click", generateIngredients);
